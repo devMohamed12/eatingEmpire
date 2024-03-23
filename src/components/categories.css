@@ -1,0 +1,34 @@
+
+.categories-container{
+  display: grid;
+  grid-template-columns: repeat(4,120px);
+  gap: 10px;
+  width: fit-content;
+  margin: 20px auto;
+ }
+
+.categories-container a {
+  background: linear-gradient(to right, #00008b 0%, #007bff 100%);
+  /* Add padding for visual clarity */
+  padding: 10px;
+  /* Transition for smooth change on hover */
+  transition: background-color 0.5s ease-in-out;
+}
+
+.categories-container a:hover {
+  /* Change background color on hover */
+  background-color: #33001b;
+  /* Optionally add a text hover color change */
+  color: #ffffff;
+}
+
+
+
+
+@media (max-width:768px) {
+  .categories-container{
+    grid-template-columns: repeat(4,80px);
+    gap: 15px;
+  }
+}
+

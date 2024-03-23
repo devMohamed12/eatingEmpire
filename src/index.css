@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica,  Arial, sans-serif;
+ 
+  
+}
+
+
+
+body{
+  background: linear-gradient(180deg, #ff512fbd 0%, #F09819  51%, #ff512fc4  100%);
+  min-height: 100vh;
+
+
+
+animation: gradient-shift 8s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 100%; /* Shift gradient vertically */
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+ 
+
+/*
+text => linear-gradient(to right, #33001b  , #ff0084 )
+00008b
+
+
+*/
