@@ -26,7 +26,7 @@ const Popular = () => {
 
 
   return (
-    <div className="my-11">
+    <div className="my-11   min-h-fit">
       <Container>
         <MainTitle content={"Popular recipes"} />
         <Splide
@@ -50,8 +50,8 @@ const Popular = () => {
         >
           {popular.map((recipe) => (
             <SplideSlide key={recipe.id}>
-              <Link to={`/recipe/${recipe.id}`} className="h-[400px] block">
-                <CuisineItem recipe={recipe} test={"true"} />
+              <Link to={`/recipe/${recipe.id}`} className="block">
+                <CuisineItem recipe={recipe} popular={"true"} />
               </Link>
             </SplideSlide>
           ))}

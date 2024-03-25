@@ -5,6 +5,9 @@ import { Container, MainTitle } from "../Layout/ComponentsLayout";
 import { apiKey, apiLink } from "../components/apiInfo";
 
 const Recipe = () => {
+  
+  
+
   const [details, setDetails] = useState({});
   const [activeTab, setActiveTab] = useState("instructions");
   const { id } = useParams();
@@ -15,7 +18,7 @@ const Recipe = () => {
     setDetails(detailData);
   };
 
-  useEffect(() => {
+   useEffect(() => {
     getDetails(id);
   }, []);
 
