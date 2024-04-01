@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-import "./categories.css"
+
 
 const categoryStyle =
-  " w-20 h-20 p-1 mx-auto rounded-[50%] flex items-center justify-center text-white hover:bg-red-700 hover:shadow-lg hover:shadow-cyan-700  hover:-translate-y-3 hover:scale-105 transition-all ease-in-out duration-500";
+  "bg-gradient-to-r from-blue-900 to-sky-600 w-20 h-20 p-1 mx-auto rounded-[50%] flex items-center justify-center text-white hover:bg-blue-700 hover:shadow-lg hover:shadow-cyan-700  hover:-translate-y-3 hover:scale-105 transition-all ease-in-out duration-500";
 
 const Categories = () => {
   return (
-    <div className="categories-container w-fit mx-auto">
+    <div className=" grid lg:grid-cols-4 md:grid-cols-2 gap-4 w-fit mx-auto">
       <NavLink className={categoryStyle} to={"/CuisinePage/German"}>
         <h4>German </h4>
       </NavLink>

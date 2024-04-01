@@ -1,7 +1,7 @@
-import { Categories, Popular, RecipeCarousel } from "../components/Export";
+import { Categories,  RecipeCarousel } from "../components/Export";
 
 const Home = () => {
-  const recipeCategories = ["breakfast", "dessert", "snack"];
+  const recipeCategories = ["healthy", "breakfast", "dessert", "snack"];
   const carousels = recipeCategories.map((text, idx) => (
     <RecipeCarousel recipeCategory={text} key={idx} />
   ));
@@ -13,8 +13,7 @@ const Home = () => {
       </h3>
       <Categories />
       <div>
-        <Popular />
-        {carousels}
+          {carousels}
       </div>
     </>
   );

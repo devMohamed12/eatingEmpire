@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
-import {  useNavigate, useParams } from "react-router-dom";
-import {
-  GridContainer,
-  CuisineItem,
-  Container,
-} from "../Layout/ComponentsLayout";
+import { useNavigate, useParams } from "react-router-dom";
+import { CuisineItem, Container } from "../components/Export";
 import { apiKey, apiLink } from "../components/apiInfo";
-import {Categories} from "../components/Export";
 
 const CuisinePage = () => {
   const [cuisine, setCuisine] = useState([]);
@@ -14,11 +9,16 @@ const CuisinePage = () => {
   const navigate = useNavigate();
 
   const getCuisine = async (name) => {
-    const data = await fetch(
-      `${apiLink}/complexSearch?apiKey=${apiKey}&number=10&cuisine=${name}`
-    );
-    const recipes = await data.json();
-    setCuisine(recipes.results);
+    const checkCuisine = sessionStorage.getItem("cuisine");
+    if (checkCuisine) {
+      setCuisine(JSON.parse(checkCuisine));
+    } else {
+      const data = await fetch(
+        `${apiLink}/complexSearch?apiKey=${apiKey}&number=10&cuisine=${name}`
+      );
+      const recipes = await data.json();
+      setCuisine(recipes.results);
+    }
   };
 
   useEffect(() => {
@@ -32,14 +32,13 @@ const CuisinePage = () => {
   return (
     <>
       <Container>
-        <Categories />
-        <GridContainer>
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 w-full">
           {cuisine.map((recipe) => (
             <div onClick={() => handleClick(recipe.id)} key={recipe.id}>
               <CuisineItem recipe={recipe} />
             </div>
           ))}
-        </GridContainer>
+        </div>
       </Container>
     </>
   );

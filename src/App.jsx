@@ -1,11 +1,27 @@
 import "./index.css";
-import Pages from "./pages/Pages";
+import { Route, Routes, BrowserRouter, HashRouter } from "react-router-dom";
+import {
+  CuisinePage,
+  Home,
+  Recipe,
+  Container,
+  Header,
+} from "./components/Export";
 
 function App() {
   return (
-    <div>
-      <Pages />
-    </div>
+    <>
+      <HashRouter>
+        <Header />
+        <Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/CuisinePage/:type" element={<CuisinePage />} />
+            <Route path="/recipe/:id" element={<Recipe />} />
+          </Routes>
+        </Container>
+      </HashRouter>
+    </>
   );
 }
 
