@@ -6,7 +6,7 @@ const categoryStyle =
 
 const Categories = () => {
   return (
-    <div className=" grid lg:grid-cols-4 grid-cols-2 gap-4 w-fit mx-auto">
+    <div className=" grid lg:grid-cols-4 grid-cols-2 mt-3 gap-4 w-fit mx-auto">
       <NavLink className={categoryStyle} to={"/CuisinePage/German"}>
         <h4>German </h4>
       </NavLink>
