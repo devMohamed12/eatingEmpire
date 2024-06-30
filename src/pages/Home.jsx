@@ -1,7 +1,7 @@
 import { Categories,  RecipeCarousel } from "../components/Export";
 
 const Home = () => {
-  const recipeCategories = ["breakfast","appetizer","salad","main-course","side-dish" ,"soup", "dessert", "snack"];
+  const recipeCategories = ["breakfast","appetizer","salad","lunch" ,"soup", "dessert", "snack"];
   const carousels = recipeCategories.map((text, idx) => (
     <RecipeCarousel recipeCategory={text} key={idx} />
   ));
